@@ -1,0 +1,1 @@
+const ApiRootURL = "https://www.ningxin.site/api"
