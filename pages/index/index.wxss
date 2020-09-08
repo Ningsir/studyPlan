@@ -1,5 +1,5 @@
 .task-item{
-  background-image: url(https://raw.githubusercontent.com/udacity/cn-wechat-weather/2-4/images/sunny-bg.png);
+  background-image: url(/images/bg.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
