@@ -1,5 +1,58 @@
+.container{
+  padding-top: 10px;
+  position: relative;
+}
 .task-item{
-  background-image: url(/images/bg.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  position: relative;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  height: 80px;
+  margin-top: 10px;
+}
+.task-bg{
+  width: 100%;
+  height: 80px;
+}
+.task-time{
+  color: midnightblue;
+}
+.task-name{
+  position: absolute;
+  top: 10px;
+  font-size: 23px;
+  left: 15rpx;
+  color: midnightblue;
+}
+.time-tag{
+  position: absolute;
+  top: 50px;
+  left: 15rpx;
+  width: 100%;
+}
+.task-begin-button{
+  position: absolute;
+  top: 30px;
+  right: 100rpx;
+  font-size: 20px;
+  color: midnightblue;
+}
+.create-task{
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  bottom: 80rpx;
+  right: 20rpx;
+  z-index: 100;
+}
+.create-img{
+  width: 40px;
+  height: 40px;
+}
+.tag-container{
+  position: absolute;
+  left: 150rpx;
+}
+.tag-img{
+  width: 30rpx;
+  height: 30rpx;
 }
