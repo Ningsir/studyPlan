@@ -1,1 +1,7 @@
-{}
+{
+  "usingComponents": {
+    "van-divider": "@vant/weapp/divider/index",
+    "ec-canvas": "../../miniprogram_npm/ec-canvas/ec-canvas"
+  },
+  "navigationBarTitleText": "数据统计"
+}

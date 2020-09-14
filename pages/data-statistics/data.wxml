@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="basic-data card">
+    <van-divider contentPosition="center" customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;">
+      {{ current_date }}
+    </van-divider>
+    <view class="task-basic-data">
+      <text class="task-info-title">今日学习量</text>
+      <view class="task-data">
+        <text class="data-info">{{today_study_hours}}</text>
+        <text class="data-unit">小时</text>
+        <text class="data-info">{{today_study_minutes}}</text>
+        <text class="data-unit">分钟</text>
+      </view>
+    </view>
+    <van-divider  customStyle=" border-color: lightgray;"/>
+    <view class="task-basic-data">
+      <text class="task-info-title">今日完成任务数</text>
+      <view class="task-data">
+        <text class="data-info">{{today_task_count}}</text>
+      </view>
+    </view>
+    <van-divider  customStyle=" border-color: lightgray;"/>
+    <view class="task-basic-data">
+      <text class="task-info-title">日均时长</text>
+      <view class="task-data">
+        <text class="data-info">{{average_study_hours}}</text>
+        <text class="data-unit">小时</text>
+        <text class="data-info">{{average_study_minutes}}</text>
+        <text class="data-unit">分钟</text>
+      </view>
+    </view>
+  </view>
+  <view class="month-data">
+    <ec-canvas style="width:100%" id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  </view>
+</view>

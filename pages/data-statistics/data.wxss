@@ -1,0 +1,47 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+}
+.basic-data{
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx;
+  padding: 20rpx;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: seashell;
+  background-color: seashell;
+  justify-content: space-between;
+}
+
+.task-info-title{
+  color: #0087FD;
+  font-size: 15px;
+}
+
+.task-basic-data{
+  margin-bottom: 20rpx;
+  display: inline-flex;
+  position: relative;
+}
+
+.task-data{
+  position: absolute;
+  left: 400rpx;
+}
+
+.data-unit{
+  font-size: 15px;
+}
+
+.data-info{
+  font-size: 20px;
+  margin: 2px;
+}
+
+.month-data{
+  width: 100%;
+  height: 600rpx;
+}
