@@ -5,7 +5,7 @@ Page({
     
   },
   handleGetUserInfo(e){
-    // console.log(e);
+    console.log(e);
     const {userInfo}=e.detail;
     wx.setStorageSync('userinfo', userInfo);
     const userinfo=wx.getStorageSync("userinfo");

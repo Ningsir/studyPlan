@@ -22,13 +22,13 @@
             <text>开始</text>
           </navigator>
           <!-- <image class="task-bg" mode="aspectFill" src="http://image.ningxin.site/bg.jpg"></image>    -->
-          <image class="task-bg" mode="aspectFill" src="/images/task_img/{{item.img}}"></image>
+          <image class="task-bg" mode="aspectFill" src="http://image.ningxin.site/{{item.img}}"></image>
           <!-- </view> -->
         </mp-slideview>
       </view>
     </view>
     <!-- 添加任务按钮 -->
-    <navigator class="create-task" url="/pages/task-begin/task-begin">
+    <navigator class="create-task" url="/pages/addtask/addtask">
       <van-icon name="plus" size="40px" color="#0087FD" />
     </navigator>
   </view>
