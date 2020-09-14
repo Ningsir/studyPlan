@@ -1,11 +1,14 @@
 {
   "pages": [
-    "pages/data-statistics/data",
     "pages/index/index",
+    "pages/addtask/addtask",
+    "pages/task-begin/task-begin",
+    "pages/editTask/editTask",
     "pages/user/user",
-    "pages/task-begin/task-begin"
+    "pages/log/log",
+    "pages/data-statistics/data",
+    "pages/encourage/encourage"
   ],
-  
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0087FD",
@@ -38,9 +41,22 @@
       }
     ]
   },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "/miniprogram_npm/@vant/weapp/button/index",
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-calendar": "/miniprogram_npm/@vant/weapp/calendar/index",
+    "van-datetime-picker": "/miniprogram_npm/@vant/weapp/datetime-picker/index",
+    "van-divider": "/miniprogram_npm/@vant/weapp/divider/index",
+    "van-nav-bar": "/miniprogram_npm/@vant/weapp/nav-bar/index",
+    "van-row": "/miniprogram_npm/@vant/weapp/row/index",
+    "van-col": "/miniprogram_npm/@vant/weapp/col/index",
+    "van-image": "/miniprogram_npm/@vant/weapp/image/index",
+    "van-rate": "/miniprogram_npm/@vant/weapp/rate/index",
+    "van-field": "/miniprogram_npm/@vant/weapp/field/index"
+  },
   "useExtendedLib": {
     "weui": true
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  }
 }

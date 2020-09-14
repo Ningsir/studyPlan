@@ -1,0 +1,35 @@
+<!--pages/encourage/encourage.wxml-->
+<view class="title">您的评价对我们很重要</view>
+<view class="title01">评分</view>
+<van-row>
+  <van-col span="10" offset="7">
+  <van-rate class="score"
+  
+  value="{{ currrentScore }}"
+  size="{{ 25 }}"
+  allow-half
+  color=" #ee0a24"
+  void-color="#eee"
+  void-icon="star"
+  bind:change="onCurrentScoreChange"
+ 
+/>
+  </van-col>
+</van-row>
+
+<view>更多评论写在这里（不多于200字）</view>
+<van-cell-group>
+  <van-field
+    value="{{ InputMessage }}"
+    
+    label="留言"
+    maxlength="200"
+    type="textarea"
+    placeholder="请输入留言"
+    autosize
+    border="{{ false }}"
+    bind:change="OnInputChange"
+    use-button-slot
+  />
+</van-cell-group>
+<view>你的支持将鼓励我们做的更好</view>

@@ -1,13 +1,13 @@
 { 
   "usingComponents": {
-    "van-count-down": "@vant/weapp/count-down/index",
-    "van-grid": "@vant/weapp/grid/index",
-    "van-grid-item": "@vant/weapp/grid-item/index",
-    "van-toast": "@vant/weapp/toast/index",
-    "van-icon": "@vant/weapp/icon/index",
-    "van-circle": "@vant/weapp/circle/index",
-    "van-dialog": "@vant/weapp/dialog/index",
-    "van-nav-bar": "@vant/weapp/nav-bar/index"
+    "van-count-down": "/miniprogram_npm/@vant/weapp/count-down/index",
+    "van-grid": "/miniprogram_npm/@vant/weapp/grid/index",
+    "van-grid-item": "/miniprogram_npm/@vant/weapp/grid-item/index",
+    "van-toast": "/miniprogram_npm/@vant/weapp/toast/index",
+    "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+    "van-circle": "/miniprogram_npm/@vant/weapp/circle/index",
+    "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index",
+    "van-nav-bar": "/miniprogram_npm/@vant/weapp/nav-bar/index"
   },
   "navigationStyle": "custom",
   "navigationBarTitleText": "UI组件库"
