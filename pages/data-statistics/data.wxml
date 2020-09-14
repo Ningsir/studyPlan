@@ -1,0 +1,11 @@
+
+<view class="data">2020-6-19</view>
+<view class="text">你今天已经学习了</view>
+<van-divider />
+<van-cell-group>
+  <van-cell title="今日学习量" value="8hours" label="按小时计数" border="{{ false }}" />
+  <van-cell title="今日完成时长" value="9" />
+  <van-cell title="日均时长" value="9" label="Secondary text" border="{{ false }}" />
+</van-cell-group>
+<van-cell title="选择单个日期" value="{{ date }}" bind:click="onDisplay" />
+<van-calendar show="{{ show }}" color="#0087FD" bind:close="onClose" bind:confirm="onConfirm" />

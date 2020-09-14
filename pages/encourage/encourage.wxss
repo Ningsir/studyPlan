@@ -1,0 +1,9 @@
+/* pages/encourage/encourage.wxss */
+.title{
+  font-size: 35rpx;
+  text-align: center;
+}
+.title01{
+  text-align: center;
+  color: #ccc;
+}

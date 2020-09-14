@@ -1,0 +1,23 @@
+{
+  "name": "studyPlan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ningsir/studyPlan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ningsir/studyPlan/issues"
+  },
+  "homepage": "https://github.com/Ningsir/studyPlan#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.5.0"
+  }
+}

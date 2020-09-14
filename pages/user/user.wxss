@@ -1,0 +1,99 @@
+.user_info_wrap{
+  height: 40vh;
+  overflow: hidden;
+  position: relative;
+  background-color:#ccc; 
+}
+  .user_img_wrap{
+    position: relative;
+  }
+    .user_bg{
+      height: 50vh;
+      width: 70vh;
+      filter: blur(10rpx);
+    }
+    .user_info{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 25%;
+      text-align: center;
+    }
+      .user_icon{
+        width: 150rpx;
+        height:150rpx;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .user_name{
+        color:#fff;
+        margin-top: 40rpx;
+        font-size: 40rpx;
+      }
+
+      .user_btn{
+        position: absolute;
+        left: 50%;
+        width: 150rpx;
+        height:150rpx;
+        border-radius: 50%;
+        /* overflow: hidden; */
+        transform: translateX(-50%);
+        top:25%; 
+        border: 1rpx solid #0087FD;
+        color: #0087FD;
+        font-size: 38rpx;
+        text-align: center;
+        
+         /* padding: 30rpx; */
+        /* border-radius: 10rpx;  */
+      }
+
+      
+      .image_btn{
+        position: absolute;
+        left: 50%;
+        width: 150rpx;
+        height:150rpx;
+        border-radius: 50%;
+        /* overflow: hidden; */
+        transform: translateX(-50%);
+        top:0%; 
+        border: 1rpx solid #0087FD;
+        color: #0087FD;
+        font-size: 38rpx;
+        text-align: center;
+        
+         /* padding: 30rpx; */
+        /* border-radius: 10rpx;  */
+      }
+
+.row_name{
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.row_num{
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.showdata{
+  background-color: #0087FD;
+}
+.title{
+  font-size: 12px;
+  color: #939699;
+  margin-left: 10px;
+}
+/* .my{
+ padding-left: 10%;
+ padding-right: 10%;
+  
+} */
+.cell-title{
+  font-family:   'Arial Black';
+  
+}
