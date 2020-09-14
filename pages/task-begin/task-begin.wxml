@@ -1,0 +1,36 @@
+<!--pages/task-begin/task-begin.wxml-->
+<view class="container">
+  <van-nav-bar title="学习中" fixed="true" placeholder="true" bind:click-left="onClickLeft" custom-style="background-color: #0087FD" >
+    <van-icon name="arrow-left" slot="left" />
+  </van-nav-bar>
+  <image class="task-begin-bg" mode="aspectFill" src="/images/bg/{{bg_img}}"></image>
+  <text class="some-words">{{some_words}}</text>
+  <view class="count-down-wrapper">
+    <view class="timer-wrapper">
+      <van-count-down class="control-count-down" use-slot time="{{ time }}" bind:change="onChange"
+        bind:finish="finished">
+        <text class="time-item">{{ timeData.hours * 60 + timeData.minutes }}</text>
+        <text class="time-item">:</text>
+        <text class="time-item">{{ timeData.seconds }}</text>
+      </van-count-down>
+    </view>
+    <view class="progress-wrapper">
+      <van-circle value="{{percent}}" size="180" class="progress-bar" />
+    </view>
+  </view>
+  <view>
+    <text>{{task_name}}正在进行中</text>
+  </view>
+  <view class="control-button">
+    <van-icon class="control-icon" name="stop-circle-o" bindclick="stop_timer" size="40px" />
+    <block wx:if="{{ start_timer==false }}">
+      <van-icon class="control-icon" name="play-circle-o" bindclick="start" size="40px" />
+    </block>
+    <block wx:if="{{ start_timer==true }}">
+      <van-icon class="control-icon" name="pause-circle-o" bindclick="pause" size="40px" />
+    </block>
+    <van-icon class="control-icon" name="replay" bindclick="reset" size="40px" />
+  </view>
+  <van-toast id="van-toast" />
+  <van-dialog id="van-dialog" />
+</view>
