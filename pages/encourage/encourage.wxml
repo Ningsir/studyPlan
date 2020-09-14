@@ -29,6 +29,7 @@
     autosize
     border="{{ false }}"
     bind:change="OnInputChange"
+    use-button-slot
   />
 </van-cell-group>
 <view>你的支持将鼓励我们做的更好</view>

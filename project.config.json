@@ -1,5 +1,5 @@
 {
-  "description": "项目配置文件",
+  "description": "Project configuration file",
   "packOptions": {
     "ignore": []
   },
@@ -10,7 +10,7 @@
     "postcss": true,
     "preloadBackgroundData": false,
     "minified": true,
-    "newFeature": false,
+    "newFeature": true,
     "coverView": true,
     "nodeModules": true,
     "autoAudits": false,
@@ -41,7 +41,6 @@
   "debugOptions": {
     "hidedInDevtools": []
   },
-  "scripts": {},
   "isGameTourist": false,
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
@@ -55,15 +54,7 @@
       "list": []
     },
     "game": {
-      "current": -1,
-      "list": []
-    },
-    "plugin": {
-      "current": -1,
-      "list": []
-    },
-    "gamePlugin": {
-      "current": -1,
+      "currentL": -1,
       "list": []
     },
     "miniprogram": {

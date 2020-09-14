@@ -4,6 +4,8 @@
   <view class="task-name">学习英语</view>
   
   <view class="task-begin"></view>
+  <button type="default" bindtap="jmpAdd">跳转到新建任务 Normal</button>
+  <button type="default" bindtap="jmpEdit">跳转到编辑任务 Normal</button>
 </view>
 </view> -->
 

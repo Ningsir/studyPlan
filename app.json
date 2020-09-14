@@ -1,16 +1,16 @@
 {
   "pages": [
-   
+    "pages/index/index",
+    "pages/addtask/addtask",
+    "pages/editTask/editTask",
     "pages/user/user",
     "pages/log/log",
-    "pages/index/index",
     "pages/data-statistics/data",
     "pages/encourage/encourage"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#0087FD",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "学习养成计划",
     "navigationBarTextStyle": "black"
   },

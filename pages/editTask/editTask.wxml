@@ -1,0 +1,120 @@
+<van-cell-group>
+    <van-field value="{{ task_name }}"
+     placeholder="请输入任务名称"
+     border="{{ false }}"
+     label="任务名称"
+     bind:change="onChange_taskname"
+    /> 
+    <van-cell title="任务标签" value="选择标签" border="{{ false }}" is-link bind:click="dialogpopup" />
+    <van-dialog
+      use-slot
+      title="添加标签"
+      show-cancel-button="false"
+      show="{{ dialogvisible }}"
+      confirm-button-open-type="addNewTag"
+      close-on-click-overlay="true"
+      confirm-button-text="确认添加"
+      bind:confirm="dialogconfirm"
+    >
+      <view class="addtag">点击选择已有标签</view>
+      <van-row>
+        <van-col wx:for="{{currenttag}}" span="4" offset="1">
+          <van-tag plain type="primary" size="medium">{{item}}</van-tag>
+        </van-col>
+      </van-row>
+      <van-row gutter="20">
+        <van-col wx:for="{{tags}}" span="4" offset="1">
+          <van-button id="{{index}}" type="info" icon="plus" size="mini" bind:click="tag_button_click">{{item}}</van-button>
+        </van-col>
+      </van-row>
+      <view class="addtag">输入自定义标签</view>
+      <van-field
+        value="{{ newTag }}"
+        clearable
+        placeholder="请输入10字符以内的标签"
+        maxlength="10"
+        bind:change="tagChange"
+      />
+    </van-dialog>
+    <van-cell title="任务类型" value="{{task_type}}" is-link bind:click="showPopup_tasktype" />
+    <van-popup show="{{ typeshow }}" position="bottom" bind:close="onClose_tasktype">
+        <van-picker show-toolbar
+        title="任务类型"
+        columns="{{ types }}"
+        bind:change="onChange_type"
+        bind:cancel="onCancel_type"
+        bind:confirm="onConfirm_type"/>
+    </van-popup>
+</van-cell-group>
+
+<van-cell-group title="单次设置">
+    <van-cell title="设置时长" value="{{task_duration}}小时" icon="/images/nav/data.png" bind:click="single_popup" />
+    <van-popup show="{{ singleshow }}" position="bottom" bind:close="onClose_single">
+        <van-picker show-toolbar
+        title="单次任务时间"
+        columns="{{ durationRange }}"
+        bind:change="onChange_single"
+        bind:cancel="onCancel_single"
+        bind:confirm="onConfirm_single"/>
+    </van-popup>
+</van-cell-group>
+
+<van-cell-group title="多次设置">
+    <van-cell title="设置学习频率" value="{{task_frequency+'天/次'}}" bind:click="frequency_popup" />
+    <van-popup show="{{ frequencyshow }}" position="bottom" bind:close="onClose_frequency">
+        <van-picker show-toolbar
+        title="学习频率"
+        columns="{{ frequencyRange }}"
+        bind:change="onChange_frequency"
+        bind:cancel="onCancel_frequency"
+        bind:confirm="onConfirm_frequency"/>
+    </van-popup>
+    <van-cell title="开始时间" value="{{currentstarttime}}" icon="/images/nav/data.png" bind:click="start_popup" />
+    <van-popup show="{{ startshow }}" position="bottom" bind:close="onClose_start">
+        <van-datetime-picker
+            type="time"
+            value="{{ currentstarttime }}"
+            min-hour="{{ minHour }}"
+            max-hour="{{ maxHour }}"
+            bind:input="onInput_start"
+            bind:cancel="onCancel_start"
+            bind:confirm="onConfirm_start"
+        />
+    </van-popup>
+
+    <van-cell title="结束时间" value="{{currentendtime}}" icon="/images/nav/data.png" bind:click="end_popup" />
+    <van-popup show="{{ endshow }}" position="bottom" bind:close="onClose_end">
+        <van-datetime-picker
+            type="time"
+            value="{{ currentendtime }}"
+            min-hour="{{ minHour }}"
+            max-hour="{{ maxHour }}"
+            bind:input="onInput_end"
+            bind:cancel="onCancel_end"
+            bind:confirm="onConfirm_end"
+        />
+    </van-popup>
+</van-cell-group>
+<van-cell-group title="是否提醒">
+<van-radio-group value="{{ radio }}" bind:change="onChange_radio">
+  <van-cell-group>
+    <van-cell title="提醒" clickable data-name="1" bind:click="onClick_radio">
+      <van-radio slot="right-icon" name="1" />
+    </van-cell>
+    <van-cell title="不提醒" clickable data-name="2" bind:click="onClick_radio">
+      <van-radio slot="right-icon" name="2" />
+    </van-cell>
+  </van-cell-group>
+</van-radio-group>
+</van-cell-group>
+<van-row>
+  <van-col offset="2" span="12">
+    <van-button class="btn" type="primary" block color="#0087FD">保存</van-button>
+  </van-col>
+  <van-col offset="2" span="6">
+    <van-button class="btn" type="default" block>取消</van-button>
+  </van-col>
+</van-row>
+
+
+
