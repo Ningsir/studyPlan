@@ -1,0 +1,23 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-button": "/studyplan_npm/miniprogram_npm/@vant/weapp/button/index",
+    "van-cell": "/studyplan_npm/miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "/studyplan_npm/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-field": "/studyplan_npm/miniprogram_npm/@vant/weapp/field/index",
+    "van-picker": "/studyplan_npm/miniprogram_npm/@vant/weapp/picker/index",
+    "van-popup": "/studyplan_npm/miniprogram_npm/@vant/weapp/popup/index",
+    "van-datetime-picker": "/studyplan_npm/miniprogram_npm/@vant/weapp/datetime-picker/index",
+    "van-radio": "/studyplan_npm/miniprogram_npm/@vant/weapp/radio/index",
+    "van-radio-group": "/studyplan_npm/miniprogram_npm/@vant/weapp/radio-group/index",
+    "van-row": "/studyplan_npm/miniprogram_npm/@vant/weapp/row/index",
+    "van-col": "/studyplan_npm/miniprogram_npm/@vant/weapp/col/index",
+    "van-tag": "/studyplan_npm/miniprogram_npm/@vant/weapp/tag/index",
+    "van-dialog": "/studyplan_npm/miniprogram_npm/@vant/weapp/dialog/index"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#0087FD",
+  "navigationBarTitleText": "新建任务",
+  "navigationBarTextStyle": "black"
+  
+}

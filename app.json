@@ -1,12 +1,45 @@
 {
   "pages": [
-    "index/index"
+    "pages/index/index",
+    "pages/data-statistics/data",
+    "pages/user/user",
+    "pages/addtask/addtask",
+    "pages/editTask/editTask"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "学习养成计划",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#1296db",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/nav/task.png",
+        "selectedIconPath": "images/nav/task1.png",
+        "text": "任务"
+      },
+      {
+        "pagePath": "pages/data-statistics/data",
+        "iconPath": "images/nav/data.png",
+        "selectedIconPath": "images/nav/data1.png",
+        "text": "数据统计"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/nav/my.png",
+        "selectedIconPath": "images/nav/my1.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
 }
