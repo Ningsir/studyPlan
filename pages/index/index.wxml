@@ -22,7 +22,7 @@
             <text>开始</text>
           </navigator>
           <!-- <image class="task-bg" mode="aspectFill" src="http://image.ningxin.site/bg.jpg"></image>    -->
-          <image class="task-bg" mode="aspectFill" src="/images/task_img/{{item.img}}"></image>
+          <image class="task-bg" mode="aspectFill" src="http://image.ningxin.site/{{item.img}}"></image>
           <!-- </view> -->
         </mp-slideview>
       </view>
