@@ -22,7 +22,7 @@
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
     "useMultiFrameRuntime": false,
-    "useApiHook": false,
+    "useApiHook": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -36,7 +36,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.12.2",
-  "appid": "wxc2455722e0f21529",
+  "appid": "wxc220268b78be5e2d",
   "projectname": "studyPlan",
   "debugOptions": {
     "hidedInDevtools": []
