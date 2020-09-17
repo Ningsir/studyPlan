@@ -1,7 +1,12 @@
 {
   "usingComponents": {
     "van-divider": "/miniprogram_npm/@vant/weapp/divider/index",
-    "ec-canvas": "/miniprogram_npm/ec-canvas/ec-canvas"
+    "van-calendar": "/miniprogram_npm/@vant/weapp/calendar/index",
+    "ec-canvas": "/miniprogram_npm/ec-canvas/ec-canvas",
+    "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "van-datetime-picker": "/miniprogram_npm/@vant/weapp/datetime-picker/index",
+    "van-popup": "/miniprogram_npm/@vant/weapp/popup/index"
   },
   "navigationBarTitleText": "数据统计"
 }

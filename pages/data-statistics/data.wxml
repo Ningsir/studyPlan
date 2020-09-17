@@ -12,14 +12,14 @@
         <text class="data-unit">分钟</text>
       </view>
     </view>
-    <van-divider  customStyle=" border-color: lightgray;"/>
+    <van-divider customStyle=" border-color: lightgray;" />
     <view class="task-basic-data">
       <text class="task-info-title">今日完成任务数</text>
       <view class="task-data">
         <text class="data-info">{{today_task_count}}</text>
       </view>
     </view>
-    <van-divider  customStyle=" border-color: lightgray;"/>
+    <van-divider customStyle=" border-color: lightgray;" />
     <view class="task-basic-data">
       <text class="task-info-title">日均时长</text>
       <view class="task-data">
@@ -30,7 +30,33 @@
       </view>
     </view>
   </view>
-  <view class="month-data">
-    <ec-canvas style="width:100%" id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  <view class="day-data">
+    <view style="height: 40px;background-color:seashell">
+      <van-cell title="选择日期" value="{{ day_date }}" bind:click="dayDisplay" custom-class="background-color:gray" />
+      <van-calendar show="{{ day_show }}" color="#0087FD" bind:close="dayClose" bind:confirm="dayConfirm"
+      default-date="{{max_date}}" min-date="{{min_date}}" max-date="{{max_date}}" />
+    </view>
+    <view style="height: 600rpx">
+      <ec-canvas style="width:100%" id="day-chart-dom-bar" canvas-id="day-chart-bar" ec="{{ day_ec }}"></ec-canvas>
+    </view>
   </view>
+  <view class="tag-data">
+    <ec-canvas style="width:100%" id="tag-chart-dom-bar" canvas-id="tag-chart-bar" ec="{{ tag_ec }}"></ec-canvas>
+  </view>
+  <view class="month-data">
+    <view style="height: 40px">
+      <van-cell title="选择日期" value="{{ month_date }}" bind:click="monthDisplay" />
+      <van-popup show="{{ month_show }}" position="bottom" bind:close="monthClose">
+        <van-datetime-picker type="year-month" value="{{max_date}}" max-date="{{max_date}}" min-date="{{min_date}}"
+          bind:confirm="monthConfirm" bind:cancel="monthCancel" />
+      </van-popup>
+      <!-- <van-calendar show="{{ month_show }}" color="#0087FD" bind:close="monthClose" bind:confirm="monthConfirm" /> -->
+    </view>
+    <ec-canvas style="width:100%" id="month-chart-dom-bar" canvas-id="month-chart-bar" ec="{{ month_ec }}"></ec-canvas>
+  </view>
+  <!-- <view>
+      <van-calendar show="{{ true }}" color="#07c160" min-date="min_date" />
+    </view> -->
+  <!-- 提醒组件 -->
+  <van-toast id="van-toast" />
 </view>

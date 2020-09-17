@@ -41,7 +41,27 @@
   margin: 2px;
 }
 
+.day-data{
+  border-style: solid;
+  border-radius: 10px;
+  border-color: seashell;
+  background: seashell;
+  margin: 20rpx;
+  height: 640rpx;
+}
+.tag-data{
+  border-style: solid;
+  border-radius: 10px;
+  border-color: seashell;
+  background: seashell;
+  margin: 20rpx;
+  height: 600rpx;
+}
 .month-data{
-  width: 100%;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: seashell;
+  background: seashell;
+  margin: 20rpx;
   height: 600rpx;
 }
