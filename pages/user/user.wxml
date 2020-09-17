@@ -39,7 +39,7 @@
   <van-cell-group  >
   <van-cell title="个人信息" is-link icon="/images/nav/my1.png"></van-cell>
   <van-cell title="历史时间轴" title-class="cell-title" is-link  icon="/images/nav/time.png" />
-  <van-cell title="自习室" is-link icon="/images/nav/study.png" />
+  <van-cell title="日记" title-class="cell-title" is-link  icon="/images/nav/time.png" link-type="navigateTo" url="/pages/diaryList/diaryList" />
 </van-cell-group>
 
 <view class="title">外观&主题</view>

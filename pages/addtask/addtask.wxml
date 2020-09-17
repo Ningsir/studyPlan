@@ -3,9 +3,10 @@
      placeholder="请输入任务名称"
      border="{{ false }}"
      label="任务名称"
+     input-align="right"
      bind:change="onChange_taskname"
     /> 
-    <van-cell title="任务标签" value="选择标签" border="{{ false }}" is-link bind:click="dialogpopup" />
+    <van-cell title="任务标签" value="{{tasktag_dialog_text}}" border="{{ false }}" is-link bind:click="dialogpopup" />
     <van-dialog
       use-slot
       title="添加标签"
@@ -47,7 +48,9 @@
     </van-popup>
 </van-cell-group>
 
-<van-cell-group title="单次设置">
+<van-collapse accordion value="{{ activeName }}" bind:change="onChange_collapse">
+  <van-collapse-item title="单次设置" name="1" disabled="{{single_disable}}">
+    <!-- <van-cell-group title="单次设置"> -->
     <van-cell title="设置时长" value="{{task_duration}}小时" icon="/images/nav/data.png" bind:click="single_popup" />
     <van-popup show="{{ singleshow }}" position="bottom" bind:close="onClose_single">
         <van-picker show-toolbar
@@ -57,18 +60,17 @@
         bind:cancel="onCancel_single"
         bind:confirm="onConfirm_single"/>
     </van-popup>
-</van-cell-group>
-
-<van-cell-group title="多次设置">
-    <van-cell title="设置学习频率" value="{{task_frequency+'天/次'}}" bind:click="frequency_popup" />
-    <van-popup show="{{ frequencyshow }}" position="bottom" bind:close="onClose_frequency">
-        <van-picker show-toolbar
-        title="学习频率"
-        columns="{{ frequencyRange }}"
-        bind:change="onChange_frequency"
-        bind:cancel="onCancel_frequency"
-        bind:confirm="onConfirm_frequency"/>
-    </van-popup>
+    <!-- </van-cell-group> -->
+  </van-collapse-item>
+  <van-collapse-item title="多次设置" name="2" disabled="{{multi_disable}}">
+    <van-field value="{{ task_times }}"
+     placeholder="请输入任务次数"
+     border="{{ false }}"
+     label="设置任务次数"
+     input-align="right"
+     disabled="{{multi_able}}"
+     bind:change="onChange_tasktimes"
+    /> 
     <van-cell title="开始时间" value="{{currentstarttime}}" icon="/images/nav/data.png" bind:click="start_popup" />
     <van-popup show="{{ startshow }}" position="bottom" bind:close="onClose_start">
         <van-datetime-picker
@@ -94,7 +96,9 @@
             bind:confirm="onConfirm_end"
         />
     </van-popup>
-</van-cell-group>
+  </van-collapse-item>
+</van-collapse>
+
 <van-cell-group title="是否提醒">
 <van-radio-group value="{{ radio }}" bind:change="onChange_radio">
   <van-cell-group>
@@ -109,7 +113,7 @@
 </van-cell-group>
 <van-row>
   <van-col offset="2" span="12">
-    <van-button class="btn" type="primary" block color="#0087FD">保存</van-button>
+    <van-button class="btn" type="primary" block color="#0087FD" bind:click="onClick_save">保存</van-button>
   </van-col>
   <van-col offset="2" span="6">
     <van-button class="btn" type="default" block>取消</van-button>

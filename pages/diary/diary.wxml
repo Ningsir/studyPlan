@@ -1,0 +1,29 @@
+<!--pages/diary/diary.wxml-->
+<image class="diary_bg" mode="aspectFill" src="/images/bg/diarybg.jpg"></image>
+<van-cell-group>
+  <van-field
+    value="{{ diaryTitle }}"
+    label="标题"
+    type="textarea"
+    placeholder="请输入日记标题"
+    autosize
+    size="large"
+    border="{{ false }}"
+    bind:change="OnInputTitleChange"
+    custom-style="background-color: rgba(255, 255, 255, 0)"
+  />
+  <van-field class="diaryContent"
+    value="{{ diaryContent }}"
+    size="large"
+    label="正文"
+    type="textarea"
+    placeholder="请输入日记正文"
+    autosize
+    border="{{ false }}"
+    bind:change="OnInputContentChange"
+    maxlength="200"
+    show-word-limit
+    custom-style="height:200px;background-color: rgba(255, 255, 255, 0)"
+  />
+</van-cell-group>
+<van-button type="primary" bind:click="confirmDairy">保存修改</van-button>

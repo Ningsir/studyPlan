@@ -5,8 +5,12 @@ Page({
     task_type: "",
     task_typeindex: 0, //default为单次
     date: "2016-09-01",
+    task_times: 0,
     s_time: "12:01",
     e_time: "12:01",
+    single_disable: false,
+    multi_disable: false,
+    activeName: '1',
     durationRange: ["0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4"],
     task_duration: "",
     task_durationindex: 0,
@@ -21,6 +25,7 @@ Page({
     newTag: '',
     tags:["英语", "数学", "政治", "专业课", "不想学"],
     currenttag: [],
+    tasktag_dialog_text: "选择标签",
     alertItems: [
       {name: '是', value: '0', checked: true},
       {name: '否', value: '1'}
@@ -64,10 +69,15 @@ Page({
   },
   dialogconfirm(){ //点击添加标签按钮后触发的函数
     if(this.data.newTag!=""){
-      if(this.data.currenttag.indexOf(this.data.newTag)<0){
+      if(this.data.currenttag.indexOf(this.data.newTag)<0)
         this.data.currenttag.push(this.data.newTag);
-      }
     }
+    var str = "";
+    if(this.data.currenttag.length>0) //选择至少一个标签
+      str = str + this.data.currenttag[0];
+    for(var i = 1; i < this.data.currenttag.length; i++)
+      str = str + "," + this.data.currenttag[i];
+    this.setData({tasktag_dialog_text: str})
     console.log(this.data.currenttag);
   },
   //任务类型弹出
@@ -78,7 +88,8 @@ Page({
     this.setData({ 
       typeshow: false,
       task_type: "",
-      task_typeindex: 0
+      task_typeindex: 0,
+      multi_able: false
     });
   },
   onChange_type(event) {
@@ -88,13 +99,31 @@ Page({
   },
   onConfirm_type(event) {
     const { picker, value, index } = event.detail;
+    if(index==1){ //多次任务
+      this.setData({
+        multi_disable: false,
+        single_disable: true
+      })
+    }else{
+      this.setData({
+        multi_disable: true,
+        single_disable: false
+      })
+    }
     this.setData({ typeshow: false });
+    console.log(this.data.multi_disable, this.data.single_disable)
   },
   onCancel_type() { //取消按钮
     this.setData({ 
       typeshow: false,
       task_type: "",
       task_typeindex: 0
+    });
+  },
+  //折叠面板函数
+  onChange_collapse(event) {
+    this.setData({
+      activeName: event.detail,
     });
   },
   //单次设置
@@ -152,6 +181,12 @@ Page({
       task_frequency: "",
       task_frequencyindex: 0
     });
+  },
+  // 任务次数设置
+  onChange_tasktimes(e){
+    this.setData({
+      task_times: e.value
+    })
   },
   //开始、结束时间设置
   start_popup() {
@@ -220,5 +255,11 @@ Page({
     this.setData({
       radio: name,
     });
+  },
+  onClick_save(event){
+    if(this.setData.task_name=="")
+    wx.request({
+      url: 'url',
+    })
   }
 })

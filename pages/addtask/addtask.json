@@ -13,7 +13,9 @@
     "van-row": "/miniprogram_npm/@vant/weapp/row/index",
     "van-col": "/miniprogram_npm/@vant/weapp/col/index",
     "van-tag": "/miniprogram_npm/@vant/weapp/tag/index",
-    "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index"
+    "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index",
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index"
   },
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#0087FD",

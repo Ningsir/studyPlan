@@ -7,7 +7,9 @@
     "pages/user/user",
     "pages/log/log",
     "pages/data-statistics/data",
-    "pages/encourage/encourage"
+    "pages/encourage/encourage",
+    "pages/diary/diary",
+    "pages/diaryList/diaryList"
   ],
   "window": {
     "backgroundTextStyle": "light",

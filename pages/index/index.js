@@ -15,9 +15,14 @@ Page({
   onLoad: function () {
     this.setData({tasks: _data.tasks, loading: false})
     },
-  taskCheck: function(e){
-    console.log("check")
+  taskCheck: function(e){ //点击跳转到编辑页面
+    console.log(e)
+    var id = parseInt(e.currentTarget.id);
+    var obj = JSON.stringify(this.data.tasks[id]);
+    wx.navigateTo({
+      url: '/pages/editTask/editTask?obj=' + obj,
+    })
   },
   taskBegin: function(e){
-  }
+  },
 })
