@@ -1,0 +1,16 @@
+<!-- <view class="container"> -->
+<view class="page">
+    <view wx:for="{{alldiary}}" wx:key="index" id="{{index}}" catchtap="diaryPress" class="diary-item">
+        <view class="weui-cells">
+            <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+                <mp-cell style="background-color:rosybrown" class="diary-item" value="{{item.title}}" footer="{{item.date}}"></mp-cell>
+            </mp-slideview>
+        </view>
+    </view>
+</view>
+<navigator class="create-diary" url="/pages/diary/diary">
+    <van-icon name="plus" size="40px" color="#0087FD" />
+</navigator>
+
+        
+<!-- </view> -->

@@ -7,7 +7,10 @@
     "pages/editTask/editTask",
     "pages/user/user",
     "pages/log/log",
-    "pages/encourage/encourage"
+    "pages/encourage/encourage",
+    "pages/diary/diary",
+    "pages/diaryList/diaryList"
+ 
   ],
   "window": {
     "backgroundTextStyle": "light",

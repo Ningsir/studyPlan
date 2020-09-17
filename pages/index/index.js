@@ -3,39 +3,49 @@
 const app = getApp()
 const api = require('../../config/api')
 let _data = require('../../data/data.js')
-const { default: toast } = require('../../miniprogram_npm/@vant/weapp/toast/toast')
+const {
+  default: toast
+} = require('../../miniprogram_npm/@vant/weapp/toast/toast')
 Page({
   data: {
     tasks: {},
     loading: true,
-    slideButtons:[{
+    slideButtons: [{
       type: 'warn',
       text: '删除',
       src: '/page/weui/cell/icon_del.svg', // icon的路径
     }]
   },
   onLoad: function () {
-    this.setData({tasks: _data.tasks, loading: false})
-    },
-  taskCheck: function(e){
+    this.setData({
+      tasks: _data.tasks,
+      loading: false
+    })
   },
-  taskBegin: function(e){
-  },
-
-  getTasks(){
+  getTasks() {
     wx.request({
       url: api.getTask, //仅为示例，并非真实的接口地址
       header: {
         'content-type': 'application/json', // 默认值
         'Authorization': wx.getStorageSync('token') // token
       },
-      success (res) {
+      success(res) {
         // 处理任务列表数据
         console.log(res.data)
       },
-      fail(err){
+      fail(err) {
         Toast.fail("不能获取数据，错误信息: " + err)
       }
     })
-  }
+  },
+  taskCheck: function (e) { //点击跳转到编辑页面
+    console.log(e)
+    var id = parseInt(e.currentTarget.id);
+    var obj = JSON.stringify(this.data.tasks[id]);
+    wx.navigateTo({
+      url: '/pages/editTask/editTask?obj=' + obj,
+    })
+  },
+  taskBegin: function (e) {},
+
 })

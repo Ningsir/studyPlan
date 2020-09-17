@@ -2,7 +2,7 @@
 <view class="container">
   <view wx:if="{{loading == false}}" style="width:100%;height:100%">
     <view class="task-list">
-      <view wx:for="{{tasks}}" wx:key="index" catchtap="taskCheck" class="task-item">
+      <view wx:for="{{tasks}}" wx:key="index" id="{{index}}" catchtap="taskCheck" class="task-item">
         <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
           <!-- <view > -->
           <text class="task-name">{{item.name}}</text>
