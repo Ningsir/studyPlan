@@ -109,10 +109,10 @@
 </van-cell-group>
 <van-row>
   <van-col offset="2" span="12">
-    <van-button class="btn" type="primary" block color="#0087FD">保存</van-button>
+    <van-button class="btn" type="primary" block color="#0087FD" bind:click="save">保存</van-button>
   </van-col>
   <van-col offset="2" span="6">
-    <van-button class="btn" type="default" block>取消</van-button>
+    <van-button class="btn" type="default" block bind:click="cancel">取消</van-button>
   </van-col>
 </van-row>
 

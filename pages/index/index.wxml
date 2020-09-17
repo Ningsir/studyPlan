@@ -35,4 +35,6 @@
   <view wx:if="{{loading == true}}">
     Loading
   </view>
+  <!-- 提醒组件 -->
+  <van-toast id="van-toast" />
 </view>
