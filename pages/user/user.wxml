@@ -1,57 +1,57 @@
- <view class="user_info_wrap">
-  <view wx:if="{{userinfo.avatarUrl}}" class="user_img_wrap" >
-    <image  class="user_bg" src="{{userinfo.avatarUrl}}"></image>
-      <view class="user_info">  
-        <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
-        <view class="user_name">{{userinfo.nickName}}</view>
-      </view>
-  </view>
-    <view wx:else >
-      <button  plain open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo" class="user_btn">
-        <van-image
-  round
-  width="150rpx"
-  height="150rpx"
-  src="/images/nav/denglu.png"
-  class="image_btn"
-/>
-          <!-- <image src="/images/nav/denglu.png" mode="widthFix"></image>
-           -->
-      </button >
+<view class="user_info_wrap">
+  <view wx:if="{{userinfo.avatarUrl}}" class="user_img_wrap">
+    <image class="user_bg" src="{{userinfo.avatarUrl}}"></image>
+    <view class="user_info">
+      <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
+      <view class="user_name">{{userinfo.nickName}}</view>
     </view>
-</view> 
+  </view>
+  <view wx:else>
+    <button plain open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo" class="user_btn">
+      <van-image round width="150rpx" height="150rpx" src="/images/nav/denglu.png" class="image_btn" />
+      <!-- <image src="/images/nav/denglu.png" mode="widthFix"></image>
+           -->
+    </button>
+  </view>
+</view>
 
 <view class="showdata">
   <van-row class="row_name">
-  <van-col span="8" >共专注</van-col>
-  <van-col span="8">专注时长</van-col>
-  <van-col span="8">最长连续</van-col>
-</van-row>
-<van-row class="row_num">
-  <van-col span="8" >12</van-col>
-  <van-col span="8">20</van-col>
-  <van-col span="8">10</van-col>
-</van-row>
+    <van-col span="8">共专注</van-col>
+    <van-col span="8">专注时长</van-col>
+    <van-col span="8">最长连续</van-col>
+  </van-row>
+  <van-row class="row_num">
+    <van-col span="8">12</van-col>
+    <van-col span="8">20</van-col>
+    <van-col span="8">10</van-col>
+  </van-row>
 </view>
 
 
 <view class="title">我的</view>
-  <van-cell-group  >
+<van-cell-group>
   <van-cell title="个人信息" is-link icon="/images/nav/my1.png"></van-cell>
-  <van-cell title="历史时间轴" title-class="cell-title" is-link  icon="/images/nav/time.png" />
+  <van-cell title="历史时间轴" title-class="cell-title" is-link icon="/images/nav/time.png" />
   <van-cell title="自习室" is-link icon="/images/nav/study.png" />
 </van-cell-group>
 
 <view class="title">外观&主题</view>
-<van-cell-group >
-  <van-cell title="海报和背景设置" is-link  icon="/images/nav/appearance.png" />
+<van-cell-group>
+  <van-cell title="海报和背景设置" is-link icon="/images/nav/appearance.png" />
   <van-cell title="自定义底栏模块" is-link icon="/images/nav/diy.png" />
   <van-cell title="主题颜色搭配设置" is-link icon="/images/nav/color.png" />
 </van-cell-group>
 
 <view class="title">关于&帮助</view>
-<van-cell-group >
-  <van-cell title="使用帮助" is-link  icon="/images/nav/help.png" />
-  <van-cell title="给个鼓励" is-link icon="/images/nav/encourage.png"  link-type="navigateTo" url="/pages/encourage/encourage" />
+<van-cell-group>
+  <van-cell title="使用帮助" is-link icon="/images/nav/help.png" />
+  <van-cell title="给个鼓励" is-link icon="/images/nav/encourage.png" link-type="navigateTo"
+    url="/pages/encourage/encourage" />
   <van-cell title="分享给朋友们" is-link icon="/images/nav/share.png" />
 </van-cell-group>
+<block wx:if="{{hasLogined == true}}">
+<button class="logout-button" bindtap="logout">退出</button>
+</block>
+<van-toast id="van-toast" />
+
