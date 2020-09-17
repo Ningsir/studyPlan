@@ -1,5 +1,5 @@
 const ApiRootURL = "https://www.ningxin.site/api"
-exports.default = {
+module.exports = {
   createTask: ApiRootURL + "/task/createTask",
   getTask: ApiRootURL + "/task/getTask",
   submmit: ApiRootURL + "/task/submitRecord",
