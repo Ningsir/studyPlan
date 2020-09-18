@@ -1,0 +1,36 @@
+/* pages/login/login.wxss */
+.user_btn {
+  position: absolute;
+  left: 50%;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  /* overflow: hidden; */
+  transform: translateX(-50%);
+  top: 25%;
+  border: 1rpx solid #0087FD;
+  color: #0087FD;
+  font-size: 38rpx;
+  text-align: center;
+}
+.image_btn {
+  position: absolute;
+  left: 50%;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  /* overflow: hidden; */
+  transform: translateX(-50%);
+  top: 0%;
+  border: 1rpx solid #0087FD;
+  color: #0087FD;
+  font-size: 38rpx;
+  text-align: center;
+}
+
+.login_btn{
+  margin: 40rpx;
+  position: absolute;
+  top: 600rpx;
+  left: 200rpx;
+}

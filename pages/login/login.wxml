@@ -1,0 +1,12 @@
+<!--pages/login/login.wxml-->
+<view>
+  <button plain open-type="getUserInfo" class="user_btn">
+    <van-image round width="150rpx" height="150rpx" src="/images/nav/denglu.png" class="image_btn" />
+  </button>
+  <button class="login_btn" type="primary" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">微信授权登录</button>
+  <van-toast id="van-toast" />
+  <block wx:if="{{logining == true}}">
+    <van-loading color="#111f51" type="spinner" size="50" text-size="20"
+      style="position: fixed;top: 400rpx;left: 300rpx;">登录中</van-loading>
+  </block>
+</view>
