@@ -44,8 +44,8 @@ Page({
                 wx.setStorageSync('userInfo', userInfo);
                 wx.setStorageSync('hasLogined', true)
                 Toast.success("登录成功")
-                wx.navigateBack({
-                  delta: 1,
+                wx.switchTab({
+                  url: '/pages/index/index',
                 })
               }
               if (res.statusCode != 200) {
