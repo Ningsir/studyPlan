@@ -29,26 +29,20 @@
 
 <view class="title">我的</view>
 <van-cell-group>
-  <van-cell title="个人信息" is-link icon="/images/nav/my1.png"></van-cell>
-  <van-cell title="历史时间轴" title-class="cell-title" is-link icon="/images/nav/time.png" />
+  <van-cell title="个人信息" is-link icon="/images/nav/my1.png" link-type="navigateTo" 
+   url="/pages/information/information" />
+ 
   <van-cell title="日记" title-class="cell-title" is-link icon="/images/nav/time.png" link-type="navigateTo"
     url="/pages/diaryList/diaryList" />
 </van-cell-group>
 
-<view class="title">外观&主题</view>
-<van-cell-group>
-  <van-cell title="海报和背景设置" is-link icon="/images/nav/appearance.png" />
-  <van-cell title="自定义底栏模块" is-link icon="/images/nav/diy.png" />
-  <van-cell title="主题颜色搭配设置" is-link icon="/images/nav/color.png" />
-</van-cell-group>
 
-<view class="title">关于&帮助</view>
-<van-cell-group>
+<!-- <view class="title">关于&帮助</view> -->
+<!-- <van-cell-group>
   <van-cell title="使用帮助" is-link icon="/images/nav/help.png" />
-  <van-cell title="给个鼓励" is-link icon="/images/nav/encourage.png" link-type="navigateTo"
-    url="/pages/encourage/encourage" />
-  <van-cell title="分享给朋友们" is-link icon="/images/nav/share.png" />
-</van-cell-group>
+
+ 
+</van-cell-group> -->
 <block wx:if="{{hasLogined == true}}">
   <button class="logout-button" bindtap="logout">退出</button>
 </block>

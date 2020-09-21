@@ -1,6 +1,6 @@
 {
   "pages": [
-    
+    "pages/user/user",
     "pages/index/index",
     "pages/diaryList/diaryList",
     "pages/login/login", 
@@ -8,9 +8,9 @@
     "pages/data-statistics/data",
     "pages/task-begin/task-begin",
     "pages/editTask/editTask",
-    "pages/user/user",
+    "pages/information/information",
     "pages/log/log",
-    "pages/encourage/encourage",
+    
     "pages/diary/diary"
     
   ],

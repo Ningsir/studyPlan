@@ -1,0 +1,22 @@
+/* pages/information/information.wxss */
+.btn_summit{
+  text-align: center;
+  width: 120px;
+  height:80rpx ;
+  margin-left: 40px;
+  
+}
+
+.btn_cancle{
+  text-align: center;
+  width: 120px;
+  height:80rpx ;
+  margin-left: 40px;
+}
+.btn{
+  margin-top: 320px;
+  display:inline-flex;
+}
+.btn_summit{
+  background-color:#0087FD ;
+}
