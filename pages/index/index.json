@@ -2,6 +2,9 @@
   "usingComponents": {
     "mp-slideview": "/miniprogram_npm/weui-miniprogram/slideview/slideview",
     "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
-    "van-tag": "/miniprogram_npm/@vant/weapp/tag/index"
-  }
+    "van-tag": "/miniprogram_npm/@vant/weapp/tag/index",
+    "van-overlay": "/miniprogram_npm/@vant/weapp/overlay/index"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }

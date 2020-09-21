@@ -13,6 +13,12 @@
   width: 100%;
   height: 80px;
 }
+.task-bg-wrapper{
+  filter: grayscale(100%); 
+  -webkit-filter: grayscale(100%);
+  position: relative;
+  z-index: -1;
+}
 .task-time{
   color: midnightblue;
 }
@@ -21,6 +27,13 @@
   top: 10px;
   font-size: 23px;
   left: 15rpx;
+  color: midnightblue;
+}
+.task-status{
+  position: absolute;
+  top: 20px;
+  font-size: 13px;
+  left: 300rpx;
   color: midnightblue;
 }
 .time-tag{

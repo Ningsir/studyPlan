@@ -3,27 +3,57 @@
   <view wx:if="{{loading == false}}" style="width:100%;height:100%">
     <view class="task-list">
       <view wx:for="{{tasks}}" wx:key="index" id="{{index}}" catchtap="taskCheck" class="task-item">
-        <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
-          <!-- <view > -->
+
+        <mp-slideview id="{{index}}" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+          <!-- 任务名 -->
           <text class="task-name">{{item.name}}</text>
+          <!-- 任务状态 -->
+          <block wx:if="{{item.status == 1}}">
+            <text class="task-status">任务进行中: {{item.count}}/{{item.times}}</text>
+          </block>
+          <block wx:elif="{{item.status == 2}}">
+            <text class="task-status">超时未完成</text>
+          </block>
+          <block wx:else>
+            <text class="task-status">已经完成</text>
+          </block>
+          <!-- 任务时间和标签 -->
           <view class="time-tag" style="display:flex;flex-direction:row">
             <text class="task-time">{{item.time}}分钟</text>
             <view class="flex-wrp tag-container" style="display:flex;flex-direction:row">
+              <block wx:if="{{item.status == 1}}"> 
               <view class="tag" wx:for="{{item.tags}}" wx:key="id">
                 <!-- <text>{{item}}</text> -->
-                <van-tag   type="primary" size="medium" style="margin-right: 15rpx">{{item}}</van-tag>
+                <van-tag type="primary" size="medium" style="margin-right: 15rpx">{{item}}</van-tag>
               </view>
+            </block>
+            <block wx:else>
+              <view class="tag" wx:for="{{item.tags}}" wx:key="id">
+                <!-- <text>{{item}}</text> -->
+                <van-tag type="primary" size="medium" color="gray" style="margin-right: 15rpx">{{item}}</van-tag>
+              </view>
+            </block>
               <!-- </view> -->
             </view>
           </view>
-          <navigator class="task-begin-button"
-            url="/pages/task-begin/task-begin?task_name={{item.name}}&task_time={{item.time}}" hover-class="none"
-            catchtap="taskBegin">
-            <text>开始</text>
-          </navigator>
-          <!-- <image class="task-bg" mode="aspectFill" src="http://image.ningxin.site/bg.jpg"></image>    -->
-          <image class="task-bg" mode="aspectFill" src="http://image.ningxin.site/{{item.img}}"></image>
-          <!-- </view> -->
+          <!-- 正在完成 -->
+          <block wx:if="{{item.status == 1}}">
+            <view class="task-begin-button" id="{{index}}" catchtap="taskBegin">
+              <text>开始</text>
+            </view>
+            <view>
+              <image class="task-bg" mode="aspectFill" src="{{item.img}}"></image>
+            </view>
+          </block>
+          <!-- 超时未完成或者未已经完成 -->
+          <block wx:else>
+            <view class="task-begin-button" id="{{index}}" catchtap="taskCantBegin">
+              <text>开始</text>
+            </view>
+            <view class="task-bg-wrapper">
+              <image class="task-bg" mode="aspectFill" src="{{item.img}}"></image>
+            </view>
+          </block>
         </mp-slideview>
       </view>
     </view>
@@ -32,9 +62,12 @@
       <van-icon name="plus" size="40px" color="#0087FD" />
     </navigator>
   </view>
-  <view wx:if="{{loading == true}}">
-    Loading
-  </view>
+  <block wx:if="{{loading == true}}">
+    <van-loading color="#111f51" type="spinner" size="50" text-size="20"
+      style="position: fixed;top: 400rpx;left: 300rpx;">加载中</van-loading>
+  </block>
+  <!-- 对话框 -->
+  <van-dialog id="van-dialog" />
   <!-- 提醒组件 -->
   <van-toast id="van-toast" />
 </view>

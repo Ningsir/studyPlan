@@ -111,3 +111,8 @@
   background: #0087FD;
   margin: 20rpx;
 }
+.loading{
+  position: fixed;
+  top: 400rpx;
+  left: 300rpx;
+}

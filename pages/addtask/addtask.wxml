@@ -25,32 +25,43 @@
     <van-picker show-toolbar title="任务类型" columns="{{ types }}" bind:change="onChange_type" bind:cancel="onCancel_type"
       bind:confirm="onConfirm_type" />
   </van-popup>
+  <!-- <van-cell title="设置时长" value="{{task_duration}}小时" icon="/images/nav/data.png" bind:click="single_popup" />
+  <van-popup show="{{ singleshow }}" position="bottom" bind:close="onClose_single">
+    <van-picker show-toolbar title="单次任务时间" columns="{{ durationRange }}" bind:change="onChange_single"
+      bind:cancel="onCancel_single" bind:confirm="onConfirm_single" />
+  </van-popup> -->
+  <van-field value="{{task_duration}}" input-align="right" placeholder="请输入任务时长/分钟" border="{{ false }}" label="设置时长"
+    bind:change="onChange_single" />
 </van-cell-group>
 
 <van-collapse accordion value="{{ activeName }}" bind:change="onChange_collapse">
-  <van-collapse-item title="单次设置" name="1" disabled="{{single_disable}}">
-    <!-- <van-cell-group title="单次设置"> -->
+  <!-- <van-collapse-item title="单次设置" name="1" disabled="{{single_disable}}">
+    <van-cell-group title="单次设置">
     <van-cell title="设置时长" value="{{task_duration}}小时" icon="/images/nav/data.png" bind:click="single_popup" />
     <van-popup show="{{ singleshow }}" position="bottom" bind:close="onClose_single">
       <van-picker show-toolbar title="单次任务时间" columns="{{ durationRange }}" bind:change="onChange_single"
         bind:cancel="onCancel_single" bind:confirm="onConfirm_single" />
     </van-popup>
-    <!-- </van-cell-group> -->
-  </van-collapse-item>
+    </van-cell-group>
+  </van-collapse-item> -->
   <van-collapse-item title="多次设置" name="2" disabled="{{multi_disable}}">
     <van-field value="{{ task_times }}" placeholder="请输入任务次数" border="{{ false }}" label="设置任务次数" input-align="right"
       disabled="{{multi_able}}" bind:change="onChange_tasktimes" />
-    <van-cell title="开始时间" value="{{currentstarttime}}" icon="/images/nav/data.png" bind:click="start_popup" />
-    <van-popup show="{{ startshow }}" position="bottom" bind:close="onClose_start">
-      <van-datetime-picker type="time" value="{{ currentstarttime }}" min-hour="{{ minHour }}" max-hour="{{ maxHour }}"
-        bind:input="onInput_start" bind:cancel="onCancel_start" bind:confirm="onConfirm_start" />
-    </van-popup>
+    <van-cell title="开始日期" value="{{currentstarttime}}" icon="/images/nav/data.png" bind:click="start_popup" />
+    <!-- <van-popup show="{{ startshow }}" position="bottom" bind:close="onClose_start"> -->
+    <van-calendar show="{{ startshow }}" color="#0087FD" bind:close="onCancel_start" bind:confirm="onConfirm_start">
+    </van-calendar>
+    <!-- <van-datetime-picker type="time" value="{{ currentstarttime }}" min-hour="{{ minHour }}" max-hour="{{ maxHour }}"
+        bind:input="onInput_start" bind:cancel="onCancel_start" bind:confirm="onConfirm_start" /> default-date="{{currentstarttime}}"-->
+    <!-- </van-popup> -->
 
-    <van-cell title="结束时间" value="{{currentendtime}}" icon="/images/nav/data.png" bind:click="end_popup" />
-    <van-popup show="{{ endshow }}" position="bottom" bind:close="onClose_end">
+    <van-cell title="结束日期" value="{{currentendtime}}" icon="/images/nav/data.png" bind:click="end_popup" />
+    <van-calendar show="{{ endshow }}" color="#0087FD" bind:close="onCancel_end" bind:confirm="onConfirm_end">
+    </van-calendar>
+    <!-- <van-popup show="{{ endshow }}" position="bottom" bind:close="onClose_end">
       <van-datetime-picker type="time" value="{{ currentendtime }}" min-hour="{{ minHour }}" max-hour="{{ maxHour }}"
         bind:input="onInput_end" bind:cancel="onCancel_end" bind:confirm="onConfirm_end" />
-    </van-popup>
+    </van-popup> -->
   </van-collapse-item>
 </van-collapse>
 
@@ -74,3 +85,8 @@
     <van-button class="btn" type="default" block bind:click="cancel">取消</van-button>
   </van-col>
 </van-row>
+<block wx:if="{{submiting == true}}">
+  <van-loading color="#111f51" type="spinner" size="50" text-size="20"
+  style="position: fixed;top: 400rpx;left: 300rpx;">保存中</van-loading>
+</block>
+<van-toast id="van-toast" />

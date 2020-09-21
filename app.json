@@ -1,16 +1,18 @@
 {
   "pages": [
-    "pages/data-statistics/data",
+    
     "pages/index/index",
+    "pages/diaryList/diaryList",
+    "pages/login/login", 
     "pages/addtask/addtask",
+    "pages/data-statistics/data",
     "pages/task-begin/task-begin",
     "pages/editTask/editTask",
     "pages/user/user",
     "pages/log/log",
     "pages/encourage/encourage",
-    "pages/diary/diary",
-    "pages/diaryList/diaryList"
- 
+    "pages/diary/diary"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -58,7 +60,9 @@
     "van-image": "/miniprogram_npm/@vant/weapp/image/index",
     "van-rate": "/miniprogram_npm/@vant/weapp/rate/index",
     "van-field": "/miniprogram_npm/@vant/weapp/field/index",
-    "van-toast": "/miniprogram_npm/@vant/weapp/toast/index"
+    "van-toast": "/miniprogram_npm/@vant/weapp/toast/index",
+    "van-loading": "/miniprogram_npm/@vant/weapp/loading/index",
+    "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index"
   },
   "useExtendedLib": {
     "weui": true

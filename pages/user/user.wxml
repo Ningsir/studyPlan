@@ -9,8 +9,6 @@
   <view wx:else>
     <button plain open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo" class="user_btn">
       <van-image round width="150rpx" height="150rpx" src="/images/nav/denglu.png" class="image_btn" />
-      <!-- <image src="/images/nav/denglu.png" mode="widthFix"></image>
-           -->
     </button>
   </view>
 </view>
@@ -53,5 +51,8 @@
 </van-cell-group>
 <block wx:if="{{hasLogined == true}}">
   <button class="logout-button" bindtap="logout">退出</button>
+</block>
+<block wx:if="{{logining == true}}">
+  <van-loading class="loading" color="#111f51" type="spinner" size="50" text-size="20">登录中</van-loading>
 </block>
 <van-toast id="van-toast" />

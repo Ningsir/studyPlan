@@ -6,14 +6,29 @@ Page({
 
   data: {
     userinfo: {},
-    hasLogined: false
+    hasLogined: false,
+    logining: false
+  },
+  onLoad: function (options) {
+    // console.log(wx.getStorageSync('hasLogined'))
+    if (wx.getStorageSync('hasLogined')) {
+      this.setData({
+        hasLogined: true
+      })
+    }
+  },
+  onShow: function () {
+    this.setData({
+      userinfo: wx.getStorageSync('userInfo')
+    })
   },
   handleGetUserInfo(e) {
     const {
       userInfo
     } = e.detail;
-    wx.setStorageSync('userinfo', userInfo);
-    const userinfo = wx.getStorageSync("userinfo");
+    this.setData({
+      logining: true
+    })
     // this.setData({
     //   userinfo
     // })
@@ -22,24 +37,32 @@ Page({
       success(res) {
         if (res.code) {
           console.log(res.code)
+          // let _data = userInfo
+          // _data['code'] = res.code
           wx.request({
-            url: api.login + '?code=' + res.code, //仅为示例，并非真实的接口地址
-            data: userInfo,
+            url: api.login, //仅为示例，并非真实的接口地址
+            data: {
+              "code": res.code,
+              "userInfo": userInfo
+            },
             method: "POST",
             header: {
               'content-type': 'application/json' // 默认值
             },
             success(res) {
-              if (res.data.status == 200) {
-                // 本地缓存token
-                wx.setStorageSync('token', res.data)
+              if (res.statusCode === 200) {
                 that.setData({
-                  userinfo: userinfo,
-                  hasLogined: true
+                  userinfo: userInfo,
+                  hasLogined: true,
+                  logining: false
                 })
+                // 本地缓存token、userInfo、是否登陆的信息
+                wx.setStorageSync('token', res.data)
+                wx.setStorageSync('userInfo', userInfo);
+                wx.setStorageSync('hasLogined', true)
                 Toast.success("登录成功")
               }
-              if (res.data.status == 500) {
+              if (res.statusCode != 200) {
                 Toast.fail("登录失败")
               }
             },
@@ -66,6 +89,12 @@ Page({
           hasLogined: false
         })
         Toast.success("退出成功")
+        wx.redirectTo({
+          url: '/pages/login/login',
+        })
+        // wx.navigateTo({
+        //   url: '/pages/login/login',
+        // })
       },
       fail: (err) => {
         Toast.fail("退出失败")
