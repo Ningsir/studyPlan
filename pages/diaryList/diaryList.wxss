@@ -1,3 +1,17 @@
 .create-diary{
   position: fixed;
+  height: 50px;
+  width: 50px;
+  bottom: 80rpx;
+  right: 20rpx;
+  z-index: 100;
+}
+
+.diary-item{
+  border-style: solid;
+  border-radius: 10px;
+  border-color: seashell;
+  background-color: seashell;
+  margin: 10px;
+  height: 80px;
 }

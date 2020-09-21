@@ -1,29 +1,17 @@
 <!--pages/diary/diary.wxml-->
-<image class="diary_bg" mode="aspectFill" src="/images/bg/diarybg.jpg"></image>
-<van-cell-group>
-  <van-field
-    value="{{ diaryTitle }}"
-    label="标题"
-    type="textarea"
-    placeholder="请输入日记标题"
-    autosize
-    size="large"
-    border="{{ false }}"
-    bind:change="OnInputTitleChange"
-    custom-style="background-color: rgba(255, 255, 255, 0)"
-  />
-  <van-field class="diaryContent"
-    value="{{ diaryContent }}"
-    size="large"
-    label="正文"
-    type="textarea"
-    placeholder="请输入日记正文"
-    autosize
-    border="{{ false }}"
-    bind:change="OnInputContentChange"
-    maxlength="200"
-    show-word-limit
-    custom-style="height:200px;background-color: rgba(255, 255, 255, 0)"
-  />
-</van-cell-group>
-<van-button type="primary" bind:click="confirmDairy">保存修改</van-button>
+<view class="page">
+  <image class="diary_bg" mode="aspectFill" src="/images/bg/diarybg.jpg"></image>
+  <van-cell-group>
+    <van-field value="{{ diaryTitle }}" label="标题" type="textarea" placeholder="请输入日记标题" autosize size="large"
+      border="{{ false }}" bind:change="OnInputTitleChange" custom-style="background-color: rgba(255, 255, 255, 0)" />
+    <van-field class="diaryContent" value="{{ diaryContent }}" size="large" label="正文" type="textarea"
+      placeholder="请输入日记正文" autosize border="{{ false }}" bind:change="OnInputContentChange" maxlength="200"
+      show-word-limit custom-style="height:200px;background-color: rgba(255, 255, 255, 0)" />
+  </van-cell-group>
+  <!-- <van-button class="confirm-diary" type="primary" bind:click="confirmDairy">保存修改</van-button> -->
+  <view class="btn-area">
+    <!-- <button type="warn" class="mini-btn" size="mini" bindtap="concel">取消</button> -->
+    <button type="primary" class="mini-btn" size="mini" bindtap="save">保存</button>
+  </view>
+  <van-toast id="van-toast" />
+</view>

@@ -2,6 +2,11 @@
   "usingComponents": {
     "mp-slideview": "/miniprogram_npm/weui-miniprogram/slideview/slideview",
     "mp-cells": "/miniprogram_npm/weui-miniprogram/cells/cells",
-    "mp-cell": "/miniprogram_npm/weui-miniprogram/cell/cell"
-  }
+    "mp-cell": "/miniprogram_npm/weui-miniprogram/cell/cell",
+    "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+    "van-nav-bar": "/miniprogram_npm/@vant/weapp/nav-bar/index"
+  },
+  "navigationBarTitleText":"日记列表",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }

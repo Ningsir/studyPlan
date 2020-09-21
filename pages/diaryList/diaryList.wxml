@@ -1,16 +1,25 @@
 <!-- <view class="container"> -->
 <view class="page">
+    <!-- <van-nav-bar title="学习中" fixed="true" placeholder="true" bind:click-left="onClickLeft" bind:click-right="onClickRight"
+        custom-style="background-color: #0087FD">
+        <van-icon name="success" slot="right" />
+        <van-icon name="arrow-left" slot="left" />
+    </van-nav-bar> -->
     <view wx:for="{{alldiary}}" wx:key="index" id="{{index}}" catchtap="diaryPress" class="diary-item">
-        <view class="weui-cells">
-            <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
-                <mp-cell style="background-color:rosybrown" class="diary-item" value="{{item.title}}" footer="{{item.date}}"></mp-cell>
-            </mp-slideview>
-        </view>
+        <!-- <view class="weui-cells"> -->
+        <mp-slideview buttons="{{slideButtons}}" id="{{index}}" bindbuttontap="slideButtonTap">
+            <mp-cell style="background-color:rosybrown" class="diary-item" value="{{item.title}}"
+                footer="{{item.date}}"></mp-cell>
+        </mp-slideview>
+        <!-- </view> -->
     </view>
+    <navigator class="create-diary" url="/pages/diary/diary?type=0&id=-1">
+        <van-icon name="plus" size="50px" color="#0087FD" />
+    </navigator>
+    <block wx:if="{{loading == true}}">
+        <van-loading color="#111f51" type="spinner" size="50" text-size="20"
+            style="position: fixed;top: 400rpx;left: 300rpx;">加载中</van-loading>
+    </block>
 </view>
-<navigator class="create-diary" url="/pages/diary/diary">
-    <van-icon name="plus" size="40px" color="#0087FD" />
-</navigator>
-
-        
-<!-- </view> -->
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
