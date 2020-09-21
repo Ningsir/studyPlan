@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: stretch;
   padding: 0;
+  position: relative;
 }
 .basic-data{
   display: flex;
@@ -64,4 +65,13 @@
   background: seashell;
   margin: 20rpx;
   height: 600rpx;
+}
+.day-ec{
+  position: relative;
+  z-index: 3;
+}
+
+.day-date{
+  position: relative;
+  z-index: 999;
 }

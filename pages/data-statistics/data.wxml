@@ -31,18 +31,22 @@
     </view>
   </view>
   <view class="day-data">
-    <view style="height: 40px;background-color:seashell">
+    <view class="day-date" style="height: 40px;background-color:seashell">
       <van-cell title="选择日期" value="{{ day_date }}" bind:click="dayDisplay" custom-class="background-color:gray" />
       <van-calendar show="{{ day_show }}" color="#0087FD" bind:close="dayClose" bind:confirm="dayConfirm"
-      default-date="{{max_date}}" min-date="{{min_date}}" max-date="{{max_date}}" />
+        default-date="{{max_date}}" min-date="{{min_date}}" max-date="{{max_date}}" />
     </view>
-    <view style="height: 600rpx">
-      <ec-canvas style="width:100%" id="day-chart-dom-bar" canvas-id="day-chart-bar" ec="{{ day_ec }}"></ec-canvas>
+    <block wx:if="{{chart_hidden == false}}">
+      <view style="height: 600rpx" class="day-ec">
+        <ec-canvas style="width:100%" id="day-chart-dom-bar" canvas-id="day-chart-bar" ec="{{ day_ec }}"></ec-canvas>
+      </view>
+    </block>
+  </view>
+  <block wx:if="{{chart_hidden == false}}">
+    <view class="tag-data">
+      <ec-canvas style="width:100%" id="tag-chart-dom-bar" canvas-id="tag-chart-bar" ec="{{ tag_ec }}"></ec-canvas>
     </view>
-  </view>
-  <view class="tag-data">
-    <ec-canvas style="width:100%" id="tag-chart-dom-bar" canvas-id="tag-chart-bar" ec="{{ tag_ec }}"></ec-canvas>
-  </view>
+  </block>
   <view class="month-data">
     <view style="height: 40px">
       <van-cell title="选择日期" value="{{ month_date }}" bind:click="monthDisplay" />
@@ -52,11 +56,18 @@
       </van-popup>
       <!-- <van-calendar show="{{ month_show }}" color="#0087FD" bind:close="monthClose" bind:confirm="monthConfirm" /> -->
     </view>
-    <ec-canvas style="width:100%" id="month-chart-dom-bar" canvas-id="month-chart-bar" ec="{{ month_ec }}"></ec-canvas>
+    <block wx:if="{{chart_hidden == false}}">
+      <ec-canvas style="width:100%" id="month-chart-dom-bar" canvas-id="month-chart-bar" ec="{{ month_ec }}">
+      </ec-canvas>
+    </block>
   </view>
   <!-- <view>
       <van-calendar show="{{ true }}" color="#07c160" min-date="min_date" />
     </view> -->
   <!-- 提醒组件 -->
   <van-toast id="van-toast" />
+  <block wx:if="{{loading == true}}">
+    <van-loading color="#111f51" type="spinner" size="50" text-size="20"
+      style="position: fixed;top: 400rpx;left: 300rpx;">加载中</van-loading>
+  </block>
 </view>
