@@ -19,8 +19,8 @@
         <text class="data-info">{{today_task_count}}</text>
       </view>
     </view>
-    <van-divider customStyle=" border-color: lightgray;" />
-    <view class="task-basic-data">
+    <!-- <van-divider customStyle=" border-color: lightgray;" /> -->
+    <!-- <view class="task-basic-data">
       <text class="task-info-title">日均时长</text>
       <view class="task-data">
         <text class="data-info">{{average_study_hours}}</text>
@@ -28,7 +28,7 @@
         <text class="data-info">{{average_study_minutes}}</text>
         <text class="data-unit">分钟</text>
       </view>
-    </view>
+    </view> -->
   </view>
   <view class="day-data">
     <view class="day-date" style="height: 40px;background-color:seashell">

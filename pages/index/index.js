@@ -103,10 +103,15 @@ Page({
   },
   taskCheck: function (e) { //点击跳转到编辑页面
     var id = parseInt(e.currentTarget.id);
-    var obj = JSON.stringify(this.data.tasks[id]);
-    wx.navigateTo({
-      url: '/pages/editTask/editTask?obj=' + obj,
-    })
+    var task = this.data.tasks[id]
+    var obj = JSON.stringify(task);
+    if (task.status == 1) {
+      wx.navigateTo({
+        url: '/pages/editTask/editTask?obj=' + obj,
+      })
+    } else {
+      Toast.fail("该任务已经完成或超时未完成,不能修改")
+    }
   },
   taskBegin: function (e) {
     var id = parseInt(e.currentTarget.id);
