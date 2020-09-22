@@ -1,9 +1,8 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/diaryList/diaryList",
-    "pages/login/login", 
+    "pages/login/login",
     "pages/addtask/addtask",
     "pages/data-statistics/data",
     "pages/task-begin/task-begin",
@@ -11,8 +10,8 @@
     "pages/user/user",
     "pages/log/log",
     "pages/encourage/encourage",
-    "pages/diary/diary"
-    
+    "pages/diary/diary",
+    "pages/user-info/user-info"
   ],
   "window": {
     "backgroundTextStyle": "light",

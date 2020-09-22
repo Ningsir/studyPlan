@@ -3,6 +3,7 @@ module.exports = {
   createTask: ApiRootURL + "/task/createTask",
   getTask: ApiRootURL + "/task/getTask",
   deleteTask: ApiRootURL + "/task/deleteTask",
+  updateTask: ApiRootURL + "/task/updateTask",
   submmit: ApiRootURL + "/task/submitRecord",
   getDailyData: ApiRootURL + "/data/getDailyData",
   monthAnalyze: ApiRootURL + "/data/monthAnalyze",
