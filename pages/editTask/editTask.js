@@ -1,11 +1,18 @@
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
+
+let api = require("../../config/api")
+
 Page({
   data:{
+    task: {},
+    submiting: false,
     task_name: "",
     types: ["单次任务", "多次任务"],
     task_type: "",
-    task_typeindex: 0, //default为单次
+    task_typeindex: 0, //default为单次,
+    minutes: 0, // 任务时间
     date: "2016-09-01",
-    task_times: 0,
+    task_times: 0,// 任务次数
     s_time: "12:01",
     e_time: "12:01",
     single_disable: false,
@@ -21,7 +28,7 @@ Page({
     currentendtime: '12:00',
     minHour: 10,
     maxHour: 20,
-    radio: '1',
+    radio: '1',// 是否提醒，1提醒，0不提醒
     newTag: '',
     tags:["英语", "数学", "政治", "专业课", "不想学"],
     currenttag: [],
@@ -46,8 +53,12 @@ Page({
     var obj =JSON.parse(options.obj);
     console.log(obj)
     this.setData({
+      task: obj,
       task_name: obj.name,
-      currenttag: obj.tags
+      currenttag: obj.tags,
+      minutes: obj.time,
+      task_times: obj.times,
+      radio: String(obj.isRemind)
     })
     this.LoadCurrentTags();
   },
@@ -64,7 +75,12 @@ Page({
     this.setData({
       task_name: event.detail
     })
-    console.log(this.data.task_name)
+  },
+  onChange_minute(event){
+    console.log(event.detail)
+    this.setData({
+      minutes: event.detail
+    })
   },
   //任务标签对话框
   dialogpopup(){
@@ -267,5 +283,55 @@ Page({
     this.setData({
       radio: name,
     });
+  },
+
+  cancel(){
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
+
+  save(){
+    let _data = {
+      "id": this.data.task.id,
+      "imgUrl": this.data.task.img,
+      "isRemind": parseInt(this.data.radio),
+      "minute": parseInt(this.data.minutes),
+      "taskName": this.data.task_name,
+      "taskType": this.data.task.taskType
+    }
+    this.setData({
+      submiting: true
+    })
+    let that = this
+    wx.request({
+      url: api.updateTask,
+      data: _data,
+      method: "POST",
+      header: {
+        'content-type': 'application/json', // 默认值
+        'Authorization': wx.getStorageSync('token')
+      },
+      success(res) {
+        that.setData({
+          submiting: false
+        })
+        if (res.statusCode === 200) {
+          Toast.success("保存成功")
+          wx.navigateBack({
+            delta: 1,
+          })
+        }
+        if (res.statusCode != 200) {
+          Toast.fail("保存失败")
+        }
+      },
+      fail(err) {
+        that.setData({
+          submiting: true
+        })
+        Toast.fail("保存失败")
+      }
+    })
   }
 })
