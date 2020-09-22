@@ -1,7 +1,7 @@
 <!--pages/login/login.wxml-->
 <view class="login">
   <text class="title">学习养成计划</text>
-<image class="diary_bg" mode="aspectFill" src="/images/bg/bg.png"></image>
+<image class="diary_bg" mode="aspectFill" src="/images/bg/study4.png"></image>
   <!-- <button plain open-type="getUserInfo" class="user_btn">
     <van-image round width="150rpx" height="150rpx" src="/images/nav/denglu.png" class="image_btn" />
   </button> -->
