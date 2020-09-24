@@ -65,7 +65,13 @@ Page({
     })
     
   },
-  save(event) {
+  bindFormSubmit: function(e) {
+    this.setData({
+      diaryContent: e.detail.value.textarea
+    })
+    this.save()
+  },
+  save() {
     var newdiary = {
       "date": this.data.diaryDate,
       "title": this.data.diaryTitle,

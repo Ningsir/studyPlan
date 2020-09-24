@@ -1,4 +1,5 @@
 import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
+import Dialog from '../../miniprogram_npm/@vant/weapp/dialog/dialog'
 
 const api = require("../../config/api")
 
@@ -7,7 +8,8 @@ Page({
   data: {
     userinfo: {},
     hasLogined: false,
-    logining: false
+    logining: false,
+    userId: ''
   },
   onLoad: function (options) {
     // console.log(wx.getStorageSync('hasLogined'))
@@ -15,12 +17,24 @@ Page({
       this.setData({
         hasLogined: true
       })
+      this.setData({
+        userId: wx.getStorageSync('userId')
+      })
     }
   },
   onShow: function () {
     this.setData({
       userinfo: wx.getStorageSync('userInfo')
     })
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: '学习养成计划',
+      target: '/pages/index/index'
+    }
   },
   handleGetUserInfo(e) {
     const {
@@ -92,13 +106,50 @@ Page({
         wx.redirectTo({
           url: '/pages/login/login',
         })
-        // wx.navigateTo({
-        //   url: '/pages/login/login',
-        // })
       },
       fail: (err) => {
         Toast.fail("退出失败")
       }
     })
-  }
+  },
+  /**
+   * 注销账户
+   */
+  deleteUser(){
+    let that = this
+    Dialog.confirm({
+      title: '注销账号',
+      message: '该操作会删除用户所有信息，确定要注销吗？',
+      zIndex: 999
+    })
+    .then(() => {
+      that.deleteUserById(that.data.userId)
+    })
+    .catch(() =>{
+      // cancel 
+    })
+  },
+  
+  deleteUserById(userId) {
+    wx.request({
+      url: api.deleteUser + "?userId=" + userId,
+      header: {
+        'content-type': 'application/json', // 默认值
+        'Authorization': wx.getStorageSync('token')
+      },
+      success(res) {
+        if (res.statusCode === 200) {
+          Toast.success("注销账户成功")
+        }
+        if (res.statusCode != 200) {
+          Toast.fail("注销账户失败")
+        }
+      },
+      fail(err) {
+        Toast.fail("注销账户失败")
+      }
+    })
+  },
+
+  
 })

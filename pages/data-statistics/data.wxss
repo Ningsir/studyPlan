@@ -12,8 +12,8 @@
   padding: 20rpx;
   border-style: solid;
   border-radius: 10px;
-  border-color: seashell;
-  background-color: seashell;
+  border-color: #f7f4eb;
+  background-color: #f7f4eb;
   justify-content: space-between;
 }
 
@@ -45,24 +45,24 @@
 .day-data{
   border-style: solid;
   border-radius: 10px;
-  border-color: seashell;
-  background: seashell;
+  border-color: #f7f4eb;
+  background: #f7f4eb;
   margin: 20rpx;
   height: 640rpx;
 }
 .tag-data{
   border-style: solid;
   border-radius: 10px;
-  border-color: seashell;
-  background: seashell;
+  border-color: #f7f4eb;
+  background: #f7f4eb;
   margin: 20rpx;
   height: 600rpx;
 }
 .month-data{
   border-style: solid;
   border-radius: 10px;
-  border-color: seashell;
-  background: seashell;
+  border-color: #f7f4eb;
+  background: #f7f4eb;
   margin: 20rpx;
   height: 600rpx;
 }

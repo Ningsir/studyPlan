@@ -295,7 +295,7 @@ Page({
     let _data = {
       "id": this.data.task.id,
       "imgUrl": this.data.task.img,
-      "isRemind": parseInt(this.data.radio),
+      "isRemind": 0, // parseInt(this.data.radio),
       "minute": parseInt(this.data.minutes),
       "taskName": this.data.task_name,
       "taskType": this.data.task.taskType

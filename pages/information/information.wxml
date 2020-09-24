@@ -1,54 +1,20 @@
-<!--pages/information/information.wxml-->
-
-
-<!-- 
-<van-cell title="昵称" value="ambition" icon="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
-<van-cell title="性别" value="男" icon="/images/nav/sexual.png" />
-<van-cell title="地点" value="hubei" icon="location-o" /> -->
-
-
 <van-cell-group>
-  <van-field
-    value="{{ nickname }}"
-    label="昵称"
-   
-    border="{{ false }}"
-    bind:change="onNicknameChange"
-    left-icon="https://b.yzcdn.cn/vant/icon-demo-1126.png"
-  />
-
-  <van-field
-    value="{{ sexual }}"
-    label="性别"
-   
-    border="{{ false }}"
-    bind:change="onSexualChange"
-    left-icon="/images/nav/sexual.png"
-  />
-
-  <!-- <van-field
-    value="{{ country }}"
-    label="国籍"
-   
-    border="{{ false }}"
-    bind:change="onCountryChange"
-    left-icon="/images/nav/country.png"
-  /> -->
-
-  <van-field
-    value="{{ province }}"
-    label="省份"
-   
-    border="{{ false }}"
-    bind:change="onProvinceChange"
-    left-icon="location-o" 
-  />
-
+  <van-cell title="头像" icon="photo-o">
+    <image src="{{userInfo.avatarUrl}}" slot="right-icon" style="height:40px;width:40px"></image>
+  </van-cell>
+  <van-cell value="{{ userInfo.nickName }}" icon="manager-o" is-link>
+    <view slot="title">
+      <view class="van-cell-text">昵称</view>
+    </view>
+  </van-cell>
+  <van-cell value="{{ sexual }}" icon="/images/nav/gender.png" is-link>
+    <view slot="title">
+      <view class="van-cell-text">性别</view>
+    </view>
+  </van-cell>
+  <van-cell value="{{userInfo.city}},{{ userInfo.province }}" icon="location-o" is-link>
+    <view slot="title">
+      <view class="van-cell-text">地址</view>
+    </view>
+  </van-cell>
 </van-cell-group>
-<view class="btn">
-  
-  <button class="btn_summit" bindtap="summit">提交</button>
-  <button class="btn_cancle" bindtap="cancle">取消</button>
- 
- </view>
-

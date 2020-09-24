@@ -5,9 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    nickname:"",
-    sexual:"",
-    province:""
+     userInfo: {},
+     sexual: ''
   },
 
 
@@ -15,8 +14,6 @@ Page({
     this.setData({
       nickname:e.detail
     })
-
-    // console.log(this.data.nickname)
   } ,
 
 
@@ -24,16 +21,8 @@ Page({
     this.setData({
       sexual:e.detail
     })
-
-    // console.log(this.data.sexual)
   } ,
-  // onCountryChange(e){
-  //   this.setData({
-  //     country:e.detail
-  //   })
-
-  //   // console.log(this.data.country)
-  // } ,
+  
   onProvinceChange(e){
     this.setData({
       province:e.detail
@@ -71,7 +60,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      userInfo: wx.getStorageSync('userInfo')
+    })
+    this.setData({
+      sexual: this.data.userInfo.gender == 1 ? '男' : '女'
+    })
+    console.log(this.data.userInfo)
   },
 
  

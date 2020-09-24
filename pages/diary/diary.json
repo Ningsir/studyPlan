@@ -2,5 +2,5 @@
   "usingComponents": {
     "van-button": "/miniprogram_npm/@vant/weapp/button/index"
   },
-  "navigationBarTitleText": "日记"
+  "navigationBarTitleText": "正经人谁写日记"
 }

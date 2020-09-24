@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "van-button": "/miniprogram_npm/@vant/weapp/button/index"
+  },
   "navigationBarTitleText": "用户登录"
 }

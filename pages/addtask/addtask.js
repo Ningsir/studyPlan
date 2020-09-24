@@ -239,7 +239,7 @@ Page({
       "times": this.data.task_times,
       "startTime": this.data.currentstarttime,
       "endTime": this.data.currentendtime,
-      "isRemind": parseInt(this.data.radio),
+      "isRemind": 0, //parseInt(this.data.radio),
       "imgUrl": _data.task_img[index],
       "tags": this.data.currenttag
     }

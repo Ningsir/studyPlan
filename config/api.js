@@ -19,5 +19,6 @@ module.exports = {
   deleteDiaryById: ApiRootURL + "/data/delDiaryById",
   updateDiaryById: ApiRootURL + "/data/updateDiaryById",
   getTagDistribution: ApiRootURL + "/data/getTagDistribution",
-  refreshTaskStatus: ApiRootURL + "/task/refreshTaskStatus"
+  refreshTaskStatus: ApiRootURL + "/task/refreshTaskStatus",
+  deleteUser: ApiRootURL + "/admin/delUser"
 }

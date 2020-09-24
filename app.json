@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/user/user", 
     "pages/diaryList/diaryList",
+    "pages/user/user", 
     "pages/login/login",
     "pages/addtask/addtask",
     "pages/data-statistics/data",
@@ -16,7 +16,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0087FD",
     "navigationBarTitleText": "学习养成计划",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#6e6d6b",

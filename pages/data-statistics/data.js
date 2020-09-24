@@ -16,7 +16,7 @@ function initDayChart(canvas, width, height, dpr) {
   });
   canvas.setChart(day_chart);
   let option = {
-    backgroundColor: 'seashell',
+    backgroundColor: '#f7f4eb',
     color: ['#79c3ec', '#efacb9', '#24baaa', '#5e75ab', '#5198b7', '#c0cdad'],
     //标题样式
     title: {
@@ -60,7 +60,7 @@ function initTagChart(canvas, width, height, dpr) {
   });
   canvas.setChart(tag_chart);
   let option = {
-    backgroundColor: 'seashell',
+    backgroundColor: '#f7f4eb',
     color: ['#79c3ec', '#efacb9', '#24baaa', '#5e75ab', '#5198b7', '#c0cdad'],
     // legend: {
     //   bottom: 20
@@ -110,7 +110,7 @@ function initMonthChart(canvas, width, height, dpr) {
   });
   canvas.setChart(month_chart);
   let option = {
-    backgroundColor: 'seashell',
+    backgroundColor: '#f7f4eb',
     color: ['#6a7985'],
     //标题样式
     title: {
@@ -284,7 +284,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '学习养成计划',
+      target: '/pages/index/index'
+    }
   },
 
   dayClose() {

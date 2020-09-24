@@ -1,4 +1,5 @@
 import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
+import { getCurrentUser } from '../../config/api';
 
 const api = require("../../config/api")
 
@@ -13,13 +14,12 @@ Page({
   },
 
   handleGetUserInfo(e) {
-    console.log("login")
-    const {
-      userInfo
-    } = e.detail;
     this.setData({
       logining: true
     })
+    const {
+      userInfo
+    } = e.detail;
     let that = this
     wx.login({
       success(res) {
@@ -41,8 +41,9 @@ Page({
                 })
                 // 本地缓存token、userInfo、是否登陆的信息
                 wx.setStorageSync('token', res.data)
-                wx.setStorageSync('userInfo', userInfo);
+                wx.setStorageSync('userInfo', userInfo)
                 wx.setStorageSync('hasLogined', true)
+                that.getCurrentUser()
                 Toast.success("登录成功")
                 wx.switchTab({
                   url: '/pages/index/index',
@@ -59,6 +60,27 @@ Page({
         } else {
           console.log('登录失败' + res.errMsg)
         }
+      }
+    })
+  },
+  getCurrentUser(){
+    let that = this
+    wx.request({
+      url: api.getCurrentUser,
+      header: {
+        'content-type': 'application/json', // 默认值
+        'Authorization': wx.getStorageSync('token')
+      },
+      success(res) {
+        if (res.statusCode === 200) {
+          wx.setStorageSync('userId', res.data.userId)
+        }
+        if (res.statusCode != 200) {
+          Toast.fail("获取userId失败")
+        }
+      },
+      fail(err) {
+        Toast.fail("获取userId失败")
       }
     })
   },

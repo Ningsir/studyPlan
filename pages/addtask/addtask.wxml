@@ -65,7 +65,7 @@
   </van-collapse-item>
 </van-collapse>
 
-<van-cell-group title="是否提醒">
+<!-- <van-cell-group title="是否提醒">
   <van-radio-group value="{{ radio }}" bind:change="onChange_radio">
     <van-cell-group>
       <van-cell title="提醒" clickable data-name="1" bind:click="onClick_radio">
@@ -76,7 +76,7 @@
       </van-cell>
     </van-cell-group>
   </van-radio-group>
-</van-cell-group>
+</van-cell-group> -->
 <van-row>
   <van-col offset="2" span="12">
     <van-button class="btn" type="primary" block color="#0087FD" bind:click="save">保存</van-button>

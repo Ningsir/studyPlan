@@ -1,5 +1,6 @@
 import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 import Dialog from '../../miniprogram_npm/@vant/weapp/dialog/dialog';
+import Notify from '../../miniprogram_npm/@vant/weapp/notify/notify';
 
 //index.js
 //获取应用实例
@@ -45,6 +46,16 @@ Page({
     this.getTasks()
   },
 
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: '学习养成计划',
+      target: '/pages/index/index'
+    }
+  },
+
   hasLogined() {
     if (wx.getStorageSync('hasLogined')) {
       return true
@@ -66,7 +77,9 @@ Page({
             tasks: that.formatData(res.data),
             loading: false
           })
-          console.log(that.data.tasks)
+          if(that.data.tasks.length === 0){
+            Notify({ type: 'success', message: '没有学习任务' });
+          }
           Toast.success("加载成功")
         } else {
           Toast.fail("加载失败")

@@ -13,19 +13,27 @@
   </view>
 </view>
 
-<view class="title">我的</view>
-<van-cell-group>
-  <van-cell title="个人信息" is-link icon="/images/nav/my1.png" link-type="navigateTo" 
-   url="/pages/information/information" />
-  <van-cell title="日记" title-class="cell-title" is-link icon="/images/nav/time.png" link-type="navigateTo"
+<van-cell-group title="我的">
+  <van-cell size="large" title="个人信息" is-link icon="/images/nav/my1.png" link-type="navigateTo"
+    url="/pages/information/information" />
+  <van-cell size="large" title="日记" title-class="cell-title" is-link icon="/images/nav/time.png" link-type="navigateTo"
     url="/pages/diaryList/diaryList" />
-    <van-cell title="使用帮助" is-link icon="/images/nav/help.png" />
+
 </van-cell-group>
 
-<block wx:if="{{hasLogined == true}}">
-  <button class="logout-button" bindtap="logout">退出</button>
-</block>
+<van-cell-group title="帮助">
+  <van-cell size="large" title="使用帮助" is-link icon="/images/nav/help.png" />
+</van-cell-group>
+<van-cell-group title="账号">
+  <van-button size="large" bindtap="logout">退出
+  </van-button>
+  <van-button size="large" bindtap="deleteUser">注销账号
+  </van-button>
+  <!-- <button class="logout-button" bindtap="logout">退出</button> -->
+</van-cell-group>
+
 <block wx:if="{{logining == true}}">
   <van-loading class="loading" color="#111f51" type="spinner" size="50" text-size="20">登录中</van-loading>
 </block>
 <van-toast id="van-toast" />
+<van-dialog id="van-dialog" />

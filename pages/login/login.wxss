@@ -1,6 +1,7 @@
 /* pages/login/login.wxss */
 page{
   height: 100%;
+  background: #f7f4eb;
 }
 .login{
   display: flex;
@@ -39,12 +40,13 @@ page{
 }
 
 .login_btn{
-  margin: 40rpx;
+  /* margin: 40rpx; */
   position: absolute;
   bottom: 200rpx;
-  left: 200rpx;
-  background-color: #0087FD;
+  /* left: 200rpx; */
+  /* background-color: #0087FD; */
   color: aliceblue;
+  width: 160px;
 }
 
 .diary_bg{
@@ -59,7 +61,7 @@ page{
 .title{
   position: absolute;
   top: 100rpx;
-  left: 200rpx;
+  /* left: 200rpx; */
   font-size: 30px;
   color: white;
 }
